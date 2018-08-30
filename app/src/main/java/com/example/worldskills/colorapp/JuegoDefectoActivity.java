@@ -57,6 +57,10 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
         btnPausa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                contador.cancel();
+                asignarColoresBotones();
+                asignarPalabrasColor();
+                contador.start();
 
             }
         });
