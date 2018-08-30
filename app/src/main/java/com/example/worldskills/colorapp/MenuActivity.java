@@ -25,9 +25,6 @@ public class MenuActivity extends AppCompatActivity {
         btnPuntajes = (Button)findViewById(R.id.btnPuntajes);
         tvMenu = (TextView) findViewById(R.id.tvMenu);
 
-        Typeface fuentes = Typeface.createFromAsset(getAssets(),"assets/brlnsdb.ttf");
-        tvMenu.setTypeface(fuentes);
-
         btnPuntajes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
