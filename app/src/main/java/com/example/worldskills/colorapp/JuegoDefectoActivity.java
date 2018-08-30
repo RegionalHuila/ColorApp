@@ -80,6 +80,9 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
                 tvContadorPalabrsIncorrectas.setText("" + (++palabrasIncorrectas));
                 if (tvContadorPalabrsIncorrectas.getText().equals("3")) {
                     contador.cancel();
+                }Toast.makeText(getApplicationContext(), "Su partida Finalizo", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(JuegoDefectoActivity.this,MenuActivity.class);
+                startActivity(intent);
                 } else {
                     contador.cancel();
                     asignarPalabrasColor();
@@ -151,6 +154,9 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
             tvContadorPalabrsIncorrectas.setText("" + (++palabrasIncorrectas));
             if (tvContadorPalabrsIncorrectas.getText().equals("3")) {
                 contador.cancel();
+                Toast.makeText(getApplicationContext(), "Su partida Finalizo", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(JuegoDefectoActivity.this,MenuActivity.class);
+                startActivity(intent);
             } else {
                 contador.cancel();
                 asignarPalabrasColor();
