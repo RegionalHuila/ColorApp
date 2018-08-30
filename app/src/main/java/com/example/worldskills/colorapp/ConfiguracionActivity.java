@@ -1,5 +1,7 @@
 package com.example.worldskills.colorapp;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,9 +32,15 @@ public class ConfiguracionActivity extends AppCompatActivity {
         ocultarIntentos = (TextView)findViewById(R.id.ocultarIntentos);
         ocultarTiempoJuego = (TextView)findViewById(R.id.ocultarTiempoJuego);
 
+        ocultarIntentos.setVisibility(View.GONE);
+        ocultarTiempoJuego.setVisibility(View.GONE);
+        etNumeroIntentos.setVisibility(View.GONE);
+        etTiempoJuego.setVisibility(View.GONE);
 
-        String[] tipoJuego = {"Tiempo", "Intentos"};
-         ArrayAdapter<String> arrayAdapter = ArrayAdapter.createFromResource(this, tipoJuego, android.R.layout.simple_list_item_1);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences.Editor editor = preferences.edit();
+
+         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getApplicationContext(),R.array.array_tipo_juego, android.R.layout.simple_list_item_1);
          spOpciones.setAdapter(arrayAdapter);
 
 
@@ -40,7 +48,14 @@ public class ConfiguracionActivity extends AppCompatActivity {
           @Override
           public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
               if (spOpciones.getSelectedItem().equals("Tiempo")){
+                    ocultarTiempoJuego.setVisibility(View.VISIBLE);
+                    etTiempoJuego.setVisibility(View.VISIBLE);
+                   // int tiempo = Integer.parseInt()etTiempoJuego.getText();
+                    //editor.putInt("TIEMPOJUEGO",etTiempoJuego.getText())
 
+              }else if (spOpciones.getSelectedItem().equals("Intentos")){
+                  ocultarIntentos.setVisibility(View.VISIBLE);
+                  ocultarTiempoJuego.setVisibility(View.VISIBLE);
               }
           }
 
