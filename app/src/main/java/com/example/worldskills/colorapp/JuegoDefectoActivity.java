@@ -23,10 +23,10 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
     ArrayList<String> palabrasColor = new ArrayList<>();
     ArrayList<String> colorPalabra = new ArrayList<>();
     CountDownTimer contador;
-    Button btnColorUno, btnColorDos, btnColorTres, btnColorCuatro , btnPausa;
+    Button btnColorUno, btnColorDos, btnColorTres, btnColorCuatro, btnPausa;
     int palabrasCorrectas = 0, palabrasIncorrectas = 0, palabrasDesplegadas = 0;
-    TextView  tvPalabrasIncorrectas,tvContadorPalabrasCorrectas,tvContadorPalabrsIncorrectas,tvPalabras, tvPalabrasDesplegadas;
-    TextView tvTiempo,tvTiempoContador;
+    TextView tvPalabrasIncorrectas, tvContadorPalabrasCorrectas, tvContadorPalabrsIncorrectas, tvPalabras, tvPalabrasDesplegadas;
+    TextView tvTiempo, tvTiempoContador;
 
 
     @Override
@@ -34,15 +34,15 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego_defecto);
 
-        btnColorUno = (Button)findViewById(R.id.btnColorUno);
-        btnColorDos =(Button)findViewById(R.id.btnColorDos);
-        btnColorTres = (Button)findViewById(R.id.btnColorTres);
-        btnColorCuatro = (Button)findViewById(R.id.btnColorCuatro);
-        tvContadorPalabrasCorrectas = (TextView)findViewById(R.id.tvContadorPalabrasCorrectas);
-        tvContadorPalabrsIncorrectas = (TextView)findViewById(R.id.tvContadorPalabrasIncorrectas);
-        tvPalabrasDesplegadas = (TextView)findViewById(R.id.tvPalabrasDesplegadas);
-        tvPalabras = (TextView)findViewById(R.id.tvPalabrasColor);
-        tvTiempoContador = (TextView)findViewById(R.id.tvTiempoContador);
+        btnColorUno = (Button) findViewById(R.id.btnColorUno);
+        btnColorDos = (Button) findViewById(R.id.btnColorDos);
+        btnColorTres = (Button) findViewById(R.id.btnColorTres);
+        btnColorCuatro = (Button) findViewById(R.id.btnColorCuatro);
+        tvContadorPalabrasCorrectas = (TextView) findViewById(R.id.tvContadorPalabrasCorrectas);
+        tvContadorPalabrsIncorrectas = (TextView) findViewById(R.id.tvContadorPalabrasIncorrectas);
+        tvPalabrasDesplegadas = (TextView) findViewById(R.id.tvPalabrasDesplegadas);
+        tvPalabras = (TextView) findViewById(R.id.tvPalabrasColor);
+        tvTiempoContador = (TextView) findViewById(R.id.tvTiempoContador);
         btnPausa = (Button) findViewById(R.id.btnPausa);
 
         cargarPalabras();
@@ -50,23 +50,23 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
         asignarColoresBotones();
         asignarPalabrasColor();
 
-        btnColorUno.setBackground(this);
+        btnColorUno.setOnClickListener(this);
 
 
-        contador = new CountDownTimer(3000,1000) {
+        contador = new CountDownTimer(3000, 1000) {
             @Override
             public void onTick(long l) {
-                int tiempo = (int) l/1000;
-                tvTiempoContador.setText(""+(tiempo+1));
+                int tiempo = (int) l / 1000;
+                tvTiempoContador.setText("" + (tiempo + 1));
 
             }
 
             @Override
             public void onFinish() {
-                tvContadorPalabrsIncorrectas.setText(""+(++palabrasIncorrectas));
+                tvContadorPalabrsIncorrectas.setText("" + (++palabrasIncorrectas));
                 cargarPalabras();
                 cargarColores();
-                this.start();
+
             }
         };
         contador.start();
@@ -75,12 +75,12 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
     private void asignarPalabrasColor() {
         int indice;
         Collections.shuffle(palabrasColor);
-        indice = (int) (Math.random()*palabrasColor.size());
+        indice = (int) (Math.random() * palabrasColor.size());
         tvPalabras.setText(palabrasColor.get(indice));
         Collections.shuffle(colorPalabra);
-        indice = (int) (Math.random()*colorPalabra.size());
+        indice = (int) (Math.random() * colorPalabra.size());
         tvPalabras.setTextColor(Color.parseColor(colorPalabra.get(indice)));
-        tvPalabrasDesplegadas.setText(""+(++palabrasDesplegadas));
+        tvPalabrasDesplegadas.setText("" + (++palabrasDesplegadas));
     }
 
     private void asignarColoresBotones() {
@@ -95,7 +95,7 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
         int indiceAleatorio;
 
         Collections.shuffle(colorPalabra);
-        indiceAleatorio = (int) (Math.random()*colorPalabra.size());
+        indiceAleatorio = (int) (Math.random() * colorPalabra.size());
         btnOpcion.setBackgroundColor(Color.parseColor(colorPalabra.get(indiceAleatorio)));
         colorPalabra.remove(indiceAleatorio);
 
@@ -118,29 +118,28 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View view) {
-
         ColorDrawable color = (ColorDrawable) view.getBackground();
 
-        if(color.getColor()==tvPalabras.getCurrentTextColor()){
+        if (color.getColor() == tvPalabras.getCurrentTextColor()) {
             contador.cancel();
-            tvContadorPalabrasCorrectas.setText(""+(++palabrasCorrectas));
+            tvContadorPalabrasCorrectas.setText("" + (++palabrasCorrectas));
             asignarColoresBotones();
             asignarPalabrasColor();
             contador.start();
-        }else{
-            tvContadorPalabrsIncorrectas.setText(""+(++palabrasIncorrectas));
-            if(tvContadorPalabrsIncorrectas.getText().equals("3")){
+        } else {
+            tvContadorPalabrsIncorrectas.setText("" + (++palabrasIncorrectas));
+            if (tvContadorPalabrsIncorrectas.getText().equals("3")) {
                 contador.cancel();
                 AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
                 builder.setMessage("Tu partida finalizo")
                         .setPositiveButton("Listo", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                Intent menu = new Intent(JuegoDefectoActivity.this,MenuActivity.class);
+                                Intent menu = new Intent(JuegoDefectoActivity.this, MenuActivity.class);
                                 startActivity(menu);
                             }
                         });
 
-            }else{
+            } else {
                 contador.cancel();
                 asignarPalabrasColor();
                 asignarColoresBotones();
@@ -149,3 +148,5 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
         }
     }
 }
+
+

@@ -38,7 +38,7 @@ public class MenuActivity extends AppCompatActivity {
         btnJugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent jugar = new Intent(MenuActivity.this,PuntajesActivity.class);
+                Intent jugar = new Intent(MenuActivity.this,JuegoDefectoActivity.class);
                 startActivity(jugar);
             }
         });
