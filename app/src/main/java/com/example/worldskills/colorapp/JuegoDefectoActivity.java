@@ -136,14 +136,6 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
             tvContadorPalabrsIncorrectas.setText("" + (++palabrasIncorrectas));
             if (tvContadorPalabrsIncorrectas.getText().equals("3")) {
                 contador.cancel();
-                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-                builder.setMessage("Tu partida finalizo")
-                        .setPositiveButton("Listo", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                Intent menu = new Intent(JuegoDefectoActivity.this, MenuActivity.class);
-                                startActivity(menu);
-                            }
-                        });
 
             } else {
                 contador.cancel();
