@@ -38,7 +38,6 @@ public class PuntajesActivity extends AppCompatActivity {
                 long puntajes = consulta.getLong(consulta.getColumnIndexOrThrow(TablaDatos.AdaptadorEntrada.COLUMNA_PUNTAJE));
                 listaPuntajes.add(puntajes);
             }while (consulta.moveToNext());
-          //  listaPuntajes.set(adapter);
             consulta.close();
         }
 

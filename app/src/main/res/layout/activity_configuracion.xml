@@ -12,7 +12,9 @@
         android:text="Configuraciones"
         android:textSize="30sp"
         android:gravity="center_horizontal"
-        android:fontFamily="@font/brlnsdb"/>
+        android:fontFamily="@font/vgafix"
+        android:textStyle="bold"
+        android:textColor="@color/colorTitulo"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,8 +23,10 @@
         android:text="Opciones de juego: "
         android:textSize="25sp"
         tools:ignore="MissingConstraints"
+        android:fontFamily="@font/vgafix"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="172dp" />
+        tools:layout_editor_absoluteY="128dp" />
 
     <TextView
         android:id="@+id/ocultarIntentos"
@@ -31,9 +35,11 @@
         android:gravity="center_horizontal"
         android:text="Numero de intentos: "
         android:textSize="25sp"
+        android:fontFamily="@font/vgafix"
+        android:textStyle="bold"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="329dp" />
+        tools:layout_editor_absoluteY="284dp" />
 
     <TextView
         android:id="@+id/ocultarTiempoJuego"
@@ -42,9 +48,11 @@
         android:gravity="center_horizontal"
         android:text="Tiempo del juego: "
         android:textSize="25sp"
+        android:fontFamily="@font/vgafix"
+        android:textStyle="bold"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="406dp" />
+        tools:layout_editor_absoluteY="360dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,30 +60,34 @@
         android:gravity="center_horizontal"
         android:text="Tiempo de palabra: "
         android:textSize="25sp"
+        android:fontFamily="@font/vgafix"
+        android:textStyle="bold"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="247dp" />
+        tools:layout_editor_absoluteY="216dp" />
 
     <EditText
         android:id="@+id/etTiempoPalabra"
         android:layout_width="100dp"
         android:layout_height="46dp"
+        android:fontFamily="@font/vgafix"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="235dp" />
+        tools:layout_editor_absoluteY="216dp" />
 
     <EditText
         android:id="@+id/etTiempoJuego"
         android:layout_width="100dp"
         android:layout_height="46dp"
         tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="394dp" />
+        tools:layout_editor_absoluteY="360dp" />
 
     <EditText
         android:id="@+id/etNumeroIntentos"
         android:layout_width="100dp"
         android:layout_height="46dp"
         tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="317dp" />
+        tools:layout_editor_absoluteY="284dp" />
 
 
     <Spinner
@@ -85,7 +97,7 @@
         android:textAlignment="center"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="172dp" />
+        tools:layout_editor_absoluteY="128dp" />
 
 
     <Button

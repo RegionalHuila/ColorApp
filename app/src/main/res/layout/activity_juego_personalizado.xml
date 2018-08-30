@@ -13,7 +13,8 @@
         android:textStyle="bold"
         android:text="| |"
         android:layout_marginBottom="30dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/brlnsdb"/>
 
     <TextView
         android:id="@+id/tvPalabrasAcertadas"
@@ -22,26 +23,31 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="91dp"
-        android:text="Palabras Acertadas:" />
+        android:text="Palabras Acertadas:"
+        android:textSize="20sp"
+        android:fontFamily="@font/brlnsdb"/>
 
     <TextView
         android:id="@+id/tvPalabrasIncorrectas"
-        android:layout_width="153dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="52dp"
-        android:text="Palabras Incorrectas:" />
+        android:fontFamily="@font/brlnsdb"
+        android:text="Palabras Incorrectas:"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tvPalabrasColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/tvPalabrasDesplegadas"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"
+        android:layout_marginBottom="-213dp"
         android:text="Amarillo"
-        android:textSize="40sp" />
+        android:textSize="40sp"
+        android:fontFamily="@font/brlnsdb"/>
 
     <TextView
         android:id="@+id/tvContadorPalabrasCorrectas"
@@ -51,7 +57,8 @@
         android:layout_toEndOf="@+id/btnColorUno"
         android:text="0"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/brlnsdb"/>
 
     <TextView
         android:id="@+id/tvContadorPalabrasIncorrectas"
@@ -61,7 +68,8 @@
         android:layout_alignTop="@+id/tvPalabrasAcertadas"
         android:text="0"
         android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:fontFamily="@font/brlnsdb"/>
 
     <TextView
         android:id="@+id/tvTiempo"
@@ -70,7 +78,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/tvPalabrasIncorrectas"
         android:layout_marginEnd="59dp"
-        android:text="Tiempo:" />
+        android:text="Tiempo:"
+        android:fontFamily="@font/brlnsdb"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/tvTiempoContador"
@@ -80,7 +90,8 @@
         android:layout_alignEnd="@+id/btnColorDos"
         android:text="0"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/brlnsdb"/>
 
     <TextView
         android:id="@+id/tvPalabrasDesplegadas"
@@ -88,41 +99,40 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="213dp"
+        android:layout_marginTop="242dp"
         android:text="0"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/brlnsdb"/>
 
     <Button
         android:id="@+id/btnColorUno"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/btnColorTres"
-        android:layout_marginBottom="162dp" />
+        android:layout_marginBottom="200dp"
+        android:layout_toStartOf="@+id/tvPalabrasDesplegadas" />
 
     <Button
         android:id="@+id/btnColorDos"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/btnColorUno"
-        android:layout_marginEnd="76dp" />
+        android:layout_toEndOf="@+id/tvPalabrasDesplegadas" />
 
     <Button
         android:id="@+id/btnColorTres"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/btnColorCuatro"
-        android:layout_marginStart="65dp" />
+        android:layout_toStartOf="@+id/tvContadorPalabrasCorrectas" />
 
     <Button
         android:id="@+id/btnColorCuatro"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/btnColorDos"
-        android:layout_marginBottom="42dp" />
+        android:layout_marginBottom="92dp"
+        android:layout_toEndOf="@+id/tvContadorPalabrasCorrectas" />
 
 </RelativeLayout>
