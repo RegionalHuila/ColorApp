@@ -22,7 +22,8 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
 
-                //Intent menu = new Intent(SplashActivity.this)
+                Intent menu = new Intent(SplashActivity.this,MenuActivity.class);
+                startActivity(menu);
             }
         }.start();
     }
