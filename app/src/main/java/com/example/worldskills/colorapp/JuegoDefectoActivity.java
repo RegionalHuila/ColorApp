@@ -51,9 +51,13 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
         asignarPalabrasColor();
 
         btnColorUno.setOnClickListener(this);
+        btnColorDos.setOnClickListener(this);
+        btnColorTres.setOnClickListener(this);
+        btnColorCuatro.setOnClickListener(this);
 
 
-        contador = new CountDownTimer(3000, 1000) {
+
+        contador = new CountDownTimer(3000, 10) {
             @Override
             public void onTick(long l) {
                 int tiempo = (int) l / 1000;
