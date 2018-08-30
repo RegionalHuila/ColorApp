@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ColorApp</string>
+    <string name="colorRojo">#FFFF4043</string>
+    <string name="colorAzul">#FF0073FF</string>
+    <string name="colorVerde">#FF48BE04</string>
+    <string name="colorAmarillo">#FFFFFF00</string>
 </resources>
