@@ -53,6 +53,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
                     ocultarIntentos.setVisibility(View.INVISIBLE);
                     etNumeroIntentos.setVisibility(View.INVISIBLE);
                     editor.putString("TIEMPOJUEGO",etTiempoJuego.getText().toString());
+                    editor.putString("TIPOJUEGO","tiempo");
 
 
               }else if (spOpciones.getSelectedItem().equals("Intentos")){
@@ -61,6 +62,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
                   ocultarTiempoJuego.setVisibility(View.INVISIBLE);
                   etTiempoJuego.setVisibility(View.INVISIBLE);
                   editor.putString("INTENTOSJUEGO",etNumeroIntentos.getText().toString());
+                  editor.putString("TIPOJUEGO","intentos");
               }
           }
 
