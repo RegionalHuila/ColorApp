@@ -100,8 +100,10 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
 
         Collections.shuffle(colorPalabra);
         indiceAleatorio = (int) (Math.random() * colorPalabra.size());
+
         btnOpcion.setBackgroundColor(Color.parseColor(colorPalabra.get(indiceAleatorio)));
         colorPalabra.remove(indiceAleatorio);
+
 
 
     }
