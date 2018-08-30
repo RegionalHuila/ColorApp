@@ -1,8 +1,11 @@
 package com.example.worldskills.colorapp.baseDatos;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
 
 public class AyudaBaseDatos extends SQLiteOpenHelper {
 
@@ -22,6 +25,18 @@ public class AyudaBaseDatos extends SQLiteOpenHelper {
 
     public AyudaBaseDatos(Context context) {
         super(context, NOMBRE_BASE_DATOS, null, VERSION_BASE_DATOS);
+    }
+    public  void llenarPuntaje(){
+        SQLiteDatabase datos = this.getReadableDatabase();
+        String sql = "SELECT * FROM puntajes ORDER BY puntos LIMIT 4";
+        Cursor consulta = datos.rawQuery(sql,null);
+        if (consulta.moveToFirst()){
+            do {
+                 long puntajes = consulta.getLong(consulta.getColumnIndexOrThrow(TablaDatos.AdaptadorEntrada.COLUMNA_PUNTAJE));
+
+            }while (consulta.moveToNext());
+            consulta.close();
+        }
     }
 
 

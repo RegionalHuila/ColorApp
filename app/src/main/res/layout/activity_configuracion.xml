@@ -7,105 +7,135 @@
     tools:context=".ConfiguracionActivity">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Configuraciones"
-        android:textSize="30sp"
-        android:gravity="center_horizontal"
         android:fontFamily="@font/vgafix"
+        android:gravity="center_horizontal"
+        android:text="Configuraciones"
+        android:textColor="@color/colorTitulo"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@color/colorTitulo"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="127dp"
+        android:fontFamily="@font/vgafix"
         android:gravity="center_horizontal"
         android:text="Opciones de juego: "
         android:textSize="25sp"
-        tools:ignore="MissingConstraints"
-        android:fontFamily="@font/vgafix"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="128dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/ocultarIntentos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/vgafix"
         android:gravity="center_horizontal"
         android:text="Numero de intentos: "
         android:textSize="25sp"
-        android:fontFamily="@font/vgafix"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="284dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/ocultarTiempoJuego"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/vgafix"
         android:gravity="center_horizontal"
         android:text="Tiempo del juego: "
         android:textSize="25sp"
-        android:fontFamily="@font/vgafix"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="360dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ocultarIntentos"
+        tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:fontFamily="@font/vgafix"
         android:gravity="center_horizontal"
         android:text="Tiempo de palabra: "
         android:textSize="25sp"
-        android:fontFamily="@font/vgafix"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="216dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/etTiempoPalabra"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="46dp"
+        android:layout_marginBottom="57dp"
+        android:layout_marginTop="58dp"
         android:fontFamily="@font/vgafix"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="216dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/ocultarIntentos"
+        app:layout_constraintEnd_toEndOf="@+id/etNumeroIntentos"
+        app:layout_constraintStart_toStartOf="@+id/etNumeroIntentos"
+        app:layout_constraintTop_toBottomOf="@+id/spOpciones"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/etTiempoJuego"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="46dp"
-        tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="360dp" />
+        android:layout_marginBottom="72dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnGuardarConfig"
+        app:layout_constraintStart_toEndOf="@+id/ocultarIntentos"
+        app:layout_constraintTop_toTopOf="@+id/ocultarIntentos"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/etNumeroIntentos"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="46dp"
-        tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="284dp" />
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/etTiempoJuego"
+        app:layout_constraintEnd_toEndOf="@+id/etTiempoJuego"
+        app:layout_constraintStart_toStartOf="@+id/etTiempoJuego"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:inputType=""/>
 
 
     <Spinner
         android:id="@+id/spOpciones"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
+        android:layout_marginBottom="127dp"
+        android:layout_marginTop="127dp"
         android:textAlignment="center"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="128dp" />
+        app:layout_constraintBottom_toTopOf="@+id/etNumeroIntentos"
+        app:layout_constraintEnd_toEndOf="@+id/etTiempoPalabra"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
 
 
     <Button
         android:id="@+id/btnGuardarConfig"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="479dp" />
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ocultarTiempoJuego"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

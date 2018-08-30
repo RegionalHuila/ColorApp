@@ -50,12 +50,15 @@ public class ConfiguracionActivity extends AppCompatActivity {
               if (spOpciones.getSelectedItem().equals("Tiempo")){
                     ocultarTiempoJuego.setVisibility(View.VISIBLE);
                     etTiempoJuego.setVisibility(View.VISIBLE);
-                   // int tiempo = Integer.parseInt()etTiempoJuego.getText();
-                    //editor.putInt("TIEMPOJUEGO",etTiempoJuego.getText())
+                   //int tiempo = Integer.parseInt(String.valueOf(etTiempoJuego.getText()));
+                    editor.putString("TIEMPOJUEGO",etTiempoJuego.getText().toString());
+
 
               }else if (spOpciones.getSelectedItem().equals("Intentos")){
                   ocultarIntentos.setVisibility(View.VISIBLE);
                   ocultarTiempoJuego.setVisibility(View.VISIBLE);
+                  //int intentos = Integer.parseInt(String.valueOf(etNumeroIntentos.getText()));
+                  editor.putString("INTENTOSJUEGO",etNumeroIntentos.getText().toString());
               }
           }
 
