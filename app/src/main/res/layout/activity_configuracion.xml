@@ -4,12 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvTitulo"
         android:layout_width="601dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="26dp"
         android:fontFamily="@font/brlnsdb"
         android:gravity="center_horizontal"
         android:text="Configuraciones"
@@ -17,104 +14,124 @@
         android:textSize="50sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="241dp"
-        android:fontFamily="@font/vgafix"
-        android:gravity="center_horizontal"
-        android:text="Opciones de juego: "
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/ocultarIntentos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="174dp"
-        android:fontFamily="@font/vgafix"
-        android:gravity="center_horizontal"
-        android:text="Numero de intentos: "
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:collapseColumns="2">
 
-    <TextView
-        android:id="@+id/ocultarTiempoJuego"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginBottom="200dp"
-        android:fontFamily="@font/vgafix"
-        android:gravity="center_horizontal"
-        android:text="Tiempo del juego: "
-        android:textSize="25sp"
-        android:textStyle="bold" />
+            <TableRow>
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/ocultarIntentos"
+                    android:layout_alignEnd="@+id/ocultarIntentos"
+                    android:layout_marginBottom="-174dp"
+                    android:fontFamily="@font/vgafix"
+                    android:gravity="center_horizontal"
+                    android:text="Opciones de juego: "
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginBottom="266dp"
-        android:fontFamily="@font/vgafix"
-        android:gravity="center_horizontal"
-        android:text="Tiempo de palabra: "
-        android:textSize="25sp"
-        android:textStyle="bold" />
+                <Spinner
+                    android:id="@+id/spOpciones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/textView2"
+                    android:layout_toEndOf="@+id/textView2"
+                    android:textAlignment="center" />
+            </TableRow>
 
-    <EditText
-        android:id="@+id/etTiempoPalabra"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/etTiempoJuego"
-        android:layout_alignTop="@+id/textView3"
-        android:fontFamily="@font/vgafix"
-        android:inputType="number"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/etTiempoJuego"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/ocultarTiempoJuego"
-        android:layout_marginEnd="16dp"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/etNumeroIntentos"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignStart="@+id/etTiempoPalabra"
-        android:inputType="" />
+            <TableRow android:layout_marginTop="20dp">
+                <TextView
+                    android:id="@+id/ocultarIntentos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/etTiempoPalabra"
+                    android:fontFamily="@font/vgafix"
+                    android:gravity="center_horizontal"
+                    android:text="Numero de intentos: "
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
 
-    <Spinner
-        android:id="@+id/spOpciones"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignBottom="@+id/ocultarIntentos"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="62dp"
-        android:textAlignment="center" />
+                <EditText
+                    android:id="@+id/etNumeroIntentos"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ocultarIntentos"
+                    android:layout_toEndOf="@+id/textView2"
+                    android:inputType="" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/vgafix"
+                    android:gravity="center_horizontal"
+                    android:text="Tiempo de palabra: "
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+                <EditText
+                    android:id="@+id/etTiempoJuego"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:inputType="number" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/ocultarTiempoJuego"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/textView2"
+                    android:layout_marginBottom="200dp"
+                    android:fontFamily="@font/vgafix"
+                    android:gravity="center_horizontal"
+                    android:text="Tiempo del juego: "
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etTiempoPalabra"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/etTiempoJuego"
+                    android:layout_alignTop="@+id/textView3"
+                    android:fontFamily="@font/vgafix"
+                    android:inputType="number"
+                    android:textStyle="bold" />
+
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
 
 
     <Button
         android:id="@+id/btnGuardarConfig"
-        android:layout_width="601dp"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="76dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="84dp"
+        android:text="Jugar" />
 
 </RelativeLayout>
