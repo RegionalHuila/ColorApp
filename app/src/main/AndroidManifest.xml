@@ -19,9 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".PuntajesActivity" />
-        <activity
-            android:name=".MenuActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".JuegoDefectoActivity" />
+        <activity android:name=".ConfiguracionActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,79 @@
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tvPalabrasAcertadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/tvPalabrasIncorrectas"
+        android:layout_marginTop="55dp"
+        android:text="Palabras Acertadas:" />
+
+    <TextView
+        android:id="@+id/tvPalabrasIncorrectas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="19dp"
+        android:layout_toStartOf="@+id/tvPalabrasColor"
+        android:text="Palabras Incorrectas:" />
+
+    <TextView
+        android:id="@+id/tvPalabrasColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="163dp"
+        android:text="Amarillo"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tvContadorPalabrasCorrectas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvPalabrasIncorrectas"
+        android:layout_centerHorizontal="true"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/tvContadorPalabrasIncorrectas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvPalabrasAcertadas"
+        android:layout_centerHorizontal="true"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/btnColorUno"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignEnd="@+id/tvPalabrasIncorrectas"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="160dp" />
+
+    <Button
+        android:id="@+id/btnColorDos"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/btnColorUno"
+        android:layout_marginEnd="76dp" />
+
+    <Button
+        android:id="@+id/btnColorTres"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/btnColorCuatro"
+        android:layout_marginStart="65dp" />
+
+    <Button
+        android:id="@+id/btnColorCuatro"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/btnColorDos"
+        android:layout_marginBottom="42dp" />
+</RelativeLayout>
