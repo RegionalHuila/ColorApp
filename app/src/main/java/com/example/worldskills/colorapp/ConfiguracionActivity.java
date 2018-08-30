@@ -32,10 +32,10 @@ public class ConfiguracionActivity extends AppCompatActivity {
         ocultarIntentos = (TextView)findViewById(R.id.ocultarIntentos);
         ocultarTiempoJuego = (TextView)findViewById(R.id.ocultarTiempoJuego);
 
-        ocultarIntentos.setVisibility(View.GONE);
-        ocultarTiempoJuego.setVisibility(View.GONE);
-        etNumeroIntentos.setVisibility(View.GONE);
-        etTiempoJuego.setVisibility(View.GONE);
+        ocultarIntentos.setVisibility(View.INVISIBLE);
+        ocultarTiempoJuego.setVisibility(View.INVISIBLE);
+        etNumeroIntentos.setVisibility(View.INVISIBLE);
+        etTiempoJuego.setVisibility(View.INVISIBLE);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         final SharedPreferences.Editor editor = preferences.edit();
@@ -50,16 +50,16 @@ public class ConfiguracionActivity extends AppCompatActivity {
               if (spOpciones.getSelectedItem().equals("Tiempo")){
                     ocultarTiempoJuego.setVisibility(View.VISIBLE);
                     etTiempoJuego.setVisibility(View.VISIBLE);
-                    ocultarIntentos.setVisibility(View.GONE);
-                    etNumeroIntentos.setVisibility(View.GONE);
+                    ocultarIntentos.setVisibility(View.INVISIBLE);
+                    etNumeroIntentos.setVisibility(View.INVISIBLE);
                     editor.putString("TIEMPOJUEGO",etTiempoJuego.getText().toString());
 
 
               }else if (spOpciones.getSelectedItem().equals("Intentos")){
+                  etNumeroIntentos.setVisibility(View.VISIBLE);
                   ocultarIntentos.setVisibility(View.VISIBLE);
-                  ocultarTiempoJuego.setVisibility(View.VISIBLE);
-                  ocultarTiempoJuego.setVisibility(View.GONE);
-                  etTiempoJuego.setVisibility(View.GONE);
+                  ocultarTiempoJuego.setVisibility(View.INVISIBLE);
+                  etTiempoJuego.setVisibility(View.INVISIBLE);
                   editor.putString("INTENTOSJUEGO",etNumeroIntentos.getText().toString());
               }
           }
