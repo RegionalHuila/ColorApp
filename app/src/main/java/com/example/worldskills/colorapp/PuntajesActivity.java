@@ -31,9 +31,8 @@ public class PuntajesActivity extends AppCompatActivity {
         lvLista= (ListView)findViewById(R.id.lvLista);
 
         AyudaBaseDatos db = new AyudaBaseDatos(getApplicationContext());
+        adapter.add(db.llenarPuntaje());
 
-
-        //lvLista.setAdapter(db.llenarPuntaje());
 
 
 

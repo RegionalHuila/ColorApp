@@ -26,18 +26,6 @@ public class AyudaBaseDatos extends SQLiteOpenHelper {
     public AyudaBaseDatos(Context context) {
         super(context, NOMBRE_BASE_DATOS, null, VERSION_BASE_DATOS);
     }
-    public  void llenarPuntaje(){
-        SQLiteDatabase datos = this.getReadableDatabase();
-        String sql = "SELECT * FROM puntajes ORDER BY puntos LIMIT 4";
-        Cursor consulta = datos.rawQuery(sql,null);
-        if (consulta.moveToFirst()){
-            do {
-                 long puntajes = consulta.getLong(consulta.getColumnIndexOrThrow(TablaDatos.AdaptadorEntrada.COLUMNA_PUNTAJE));
-
-            }while (consulta.moveToNext());
-            consulta.close();
-        }
-    }
 
 
     @Override
@@ -50,4 +38,19 @@ public class AyudaBaseDatos extends SQLiteOpenHelper {
         db.execSQL(ELIMINAR_TABLA);
         onCreate(db);
     }
+
+    public Object llenarPuntaje() {
+        SQLiteDatabase datos = this.getReadableDatabase();
+        String sql = "SELECT * FROM puntajes ORDER BY puntos LIMIT 4";
+        Cursor consulta = datos.rawQuery(sql, null);
+        if (consulta.moveToFirst()) {
+            do {
+                long puntajes = consulta.getLong(consulta.getColumnIndexOrThrow(TablaDatos.AdaptadorEntrada.COLUMNA_PUNTAJE));
+
+            } while (consulta.moveToNext());
+            consulta.close();
+        }
+        return llenarPuntaje();
+    }
 }
+
