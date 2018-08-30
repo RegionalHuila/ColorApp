@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Menu"
         android:textSize="30sp"
-        android:id="@+id/tvMenu"/>
+        android:id="@+id/tvMenu" />
 
     <Button
         android:layout_width="188dp"
