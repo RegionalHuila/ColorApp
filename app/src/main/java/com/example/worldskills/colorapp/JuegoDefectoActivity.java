@@ -54,6 +54,12 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
         btnColorDos.setOnClickListener(this);
         btnColorTres.setOnClickListener(this);
         btnColorCuatro.setOnClickListener(this);
+        btnPausa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
 

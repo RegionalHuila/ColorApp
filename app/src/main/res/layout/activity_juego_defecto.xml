@@ -4,13 +4,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <Button
+        android:id="@+id/btnPausa"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:id="@+id/btnPausa"
-        android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:text="| |"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="10dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvPalabrasAcertadas"
@@ -27,9 +27,9 @@
         android:layout_width="153dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnPausa"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="-30dp"
+        android:layout_marginTop="53dp"
         android:fontFamily="@font/brlnsdb"
         android:text="Palabras Incorrectas:" />
 
@@ -46,11 +46,10 @@
 
     <TextView
         android:id="@+id/tvContadorPalabrasIncorrectas"
-        android:layout_width="wrap_content"
+        android:layout_width="25dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnPausa"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-30dp"
+        android:layout_alignStart="@+id/tvContadorPalabrasCorrectas"
+        android:layout_alignTop="@+id/tvPalabrasIncorrectas"
         android:fontFamily="@font/brlnsdb"
         android:text="0"
         android:textSize="20sp"
@@ -60,33 +59,33 @@
         android:id="@+id/tvContadorPalabrasCorrectas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/tvContadorPalabrasIncorrectas"
-        android:layout_alignTop="@+id/tvPalabrasAcertadas"
+        android:layout_alignBottom="@+id/tvPalabrasAcertadas"
+        android:layout_alignEnd="@+id/tvPalabrasIncorrectas"
+        android:fontFamily="@font/brlnsdb"
         android:text="0"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/brlnsdb"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvTiempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/tvPalabrasIncorrectas"
-        android:layout_marginEnd="59dp"
-        android:text="Tiempo:"
-        android:fontFamily="@font/brlnsdb"/>
+        android:layout_toEndOf="@+id/btnColorDos"
+        android:fontFamily="@font/brlnsdb"
+        android:text="Tiempo:" />
 
     <TextView
         android:id="@+id/tvTiempoContador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/tvPalabrasAcertadas"
-        android:layout_alignEnd="@+id/btnColorDos"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="85dp"
+        android:fontFamily="@font/brlnsdb"
         android:text="0"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/brlnsdb"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvPalabrasDesplegadas"
