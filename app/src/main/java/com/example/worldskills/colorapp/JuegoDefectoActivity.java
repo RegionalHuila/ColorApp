@@ -68,9 +68,14 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onFinish() {
                 tvContadorPalabrsIncorrectas.setText("" + (++palabrasIncorrectas));
-                cargarPalabras();
-                cargarColores();
-                contador.start();
+                if (tvContadorPalabrsIncorrectas.getText().equals("3")) {
+                    contador.cancel();
+                } else {
+                    contador.cancel();
+                    asignarPalabrasColor();
+                    asignarColoresBotones();
+                    contador.start();
+                }
             }
         };
         contador.start();
@@ -136,7 +141,6 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
             tvContadorPalabrsIncorrectas.setText("" + (++palabrasIncorrectas));
             if (tvContadorPalabrsIncorrectas.getText().equals("3")) {
                 contador.cancel();
-
             } else {
                 contador.cancel();
                 asignarPalabrasColor();
