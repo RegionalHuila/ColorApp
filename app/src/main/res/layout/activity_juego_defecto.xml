@@ -41,7 +41,7 @@
         android:textSize="40sp" />
 
     <TextView
-        android:id="@+id/tvContadorPalabrasCorrectas"
+        android:id="@+id/tvContadorPalabrasIncorrectas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/tvPalabrasIncorrectas"
@@ -51,14 +51,14 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvContadorPalabrasIncorrectas"
+        android:id="@+id/tvContadorPalabrasCorrectas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/tvContadorPalabrasCorrectas"
+        android:layout_alignStart="@+id/tvContadorPalabrasIncorrectas"
         android:layout_alignTop="@+id/tvPalabrasAcertadas"
         android:text="0"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvTiempo"

@@ -61,7 +61,7 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onTick(long l) {
                 int tiempo = (int) l / 1000;
-                tvTiempoContador.setText("" + (tiempo + 1));
+                tvTiempoContador.setText("" + (tiempo + l));
 
             }
 
@@ -70,7 +70,7 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
                 tvContadorPalabrsIncorrectas.setText("" + (++palabrasIncorrectas));
                 cargarPalabras();
                 cargarColores();
-
+                contador.start();
             }
         };
         contador.start();
@@ -147,7 +147,7 @@ public class JuegoDefectoActivity extends AppCompatActivity implements View.OnCl
                 contador.cancel();
                 asignarPalabrasColor();
                 asignarColoresBotones();
-                contador.cancel();
+                contador.start();
             }
         }
     }
